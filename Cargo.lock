@@ -398,6 +398,7 @@ dependencies = [
  "chrono",
  "cookie_store 0.0.1",
  "cookie_store_wrapper",
+ "craft-image-codecs",
  "craft-update",
  "directories",
  "dirs",
@@ -4367,6 +4368,7 @@ name = "images"
 version = "0.0.1"
 dependencies = [
  "anyhow",
+ "craft-image-codecs",
  "errors",
  "image",
  "mimetypes",
