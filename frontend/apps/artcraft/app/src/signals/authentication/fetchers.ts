@@ -47,7 +47,7 @@ export const login = async ({
   // technically user is login with the system now, HOWEVER,
   // in storyteller studio, only having a sesison is not enough,
   // we need session info and active subscription info as well
-  getUserInfoAndSubcriptions();
+  void getUserInfoAndSubcriptions();
 
   window.location.href = "/"; // TODO(bt,2025-04-19): Once we have in-page routing, get rid of this.
 };
@@ -77,7 +77,6 @@ export const signUp = async ({
     username,
     signupSource,
   });
-  console.log(response);
   if (!response.success || !response.data) {
     setLogoutStates();
     return response.errorMessage ?? "Unknown error";
@@ -86,7 +85,7 @@ export const signUp = async ({
   // technically user is login with the system now, HOWEVER,
   // in storyteller studio, only having a sesison is not enough,
   // we need session info and active subscription info as well
-  getUserInfoAndSubcriptions();
+  void getUserInfoAndSubcriptions();
   return "";
 };
 
@@ -95,12 +94,12 @@ export const persistLogin = async () => {
   if (authentication.status.value !== AUTH_STATUS.INIT) {
     return;
   }
-  getUserInfoAndSubcriptions();
+  void getUserInfoAndSubcriptions();
 };
 
 // NB: Only for SyncStorytellerApiConfig.
 export const forceGetUserInfoAndSubcriptions = async () => {
-  getUserInfoAndSubcriptions();
+  void getUserInfoAndSubcriptions();
 };
 
 async function getUserInfoAndSubcriptions() {
