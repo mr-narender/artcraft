@@ -22,6 +22,8 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2.6.2", features = [] }
 
 [dependencies]
+craft-image-codecs.workspace = true
+craft-update = { git = "https://github.com/storytold/craft-libs", rev = "16001e7210bee61db60c84fbe18c3c3e2ef4584f" }
 toml.workspace = true
 browser_emulation.workspace = true
 cookie_store_wrapper = { workspace = true, features = ["wreq"] }
